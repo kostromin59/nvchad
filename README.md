@@ -5,7 +5,7 @@
 > First install [NvChad](https://nvchad.com/docs/quickstart/install)
 
 ```sh
-git clone https://github.com/kostrominoff/nvchad ~/.config/nvim/custom
+git clone https://github.com/kostrominoff/nvchad ~/.config/nvim/lua/custom
 ```
 
 ### Tools
