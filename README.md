@@ -1,3 +1,17 @@
-# Example_config
+# NvChad custom config
 
-This can be used as an example custom config for NvChad, this branch is a minimal one. Do check the feature_full branch if you need all the ease in your config.
+## Install
+
+> First install [NvChad](https://nvchad.com/docs/quickstart/install)
+
+```sh
+git clone https://github.com/kostrominoff/nvchad ~/.config/nvim/custom
+```
+
+### Tools
+
+> I use EndeavourOS
+
+```sh
+yay -S ripgrep
+```
