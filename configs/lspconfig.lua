@@ -18,6 +18,9 @@ local servers = {
   "emmet_language_server",
   "emmet_ls",
   "prismals",
+  "gopls",
+  -- "gofumpt",
+  -- "goimports",
 }
 
 local on_attach = function(client, bufnr)

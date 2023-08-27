@@ -25,6 +25,11 @@ local sources = {
   -- Rust
   b.formatting.rustfmt,
   b.formatting.taplo,
+
+  -- Go
+  b.formatting.gofumpt,
+  b.formatting.goimports,
+  b.formatting.golines,
 }
 
 null_ls.setup {
