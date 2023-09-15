@@ -16,4 +16,8 @@ M.add = {
   NvimTreeOpenedFolderName = { fg = "green", bold = true },
 }
 
+M.ui = {
+  hl_override = { CursorLine = { bg = "black2" } },
+}
+
 return M

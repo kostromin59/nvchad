@@ -130,6 +130,19 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
+    dependencies = {
+      {
+        "L3MON4D3/LuaSnip",
+        config = function(_, opts)
+          require("plugins.configs.others").luasnip(opts)
+
+          local luasnip = require "luasnip"
+
+          luasnip.filetype_extend("javascriptreact", { "html" })
+          require("luasnip/loaders/from_vscode").lazy_load()
+        end,
+      },
+    },
   },
 
   {
@@ -150,6 +163,60 @@ local plugins = {
         dapui.close()
       end
     end,
+  },
+
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      pickers = {
+        buffers = {
+          mappings = {
+            i = {
+              ["<C-c>"] = function(prompt_bufnr)
+                local action_state = require "telescope.actions.state"
+                local current_picker = action_state.get_current_picker(prompt_bufnr)
+                current_picker:delete_selection(function(selection)
+                  local bufnr = selection.bufnr
+                  -- get associated window(s)
+                  local winids = vim.fn.win_findbuf(bufnr)
+                  -- fill winids with new empty buffers
+                  for _, winid in ipairs(winids) do
+                    -- check documentation of nvim_create_buf carefully about whether you want a scratch buffer or something else
+                    local new_buf = vim.api.nvim_create_buf(false, true)
+                    vim.api.nvim_win_set_buf(winid, new_buf)
+                  end
+                  -- remove buffer at last
+                  vim.api.nvim_buf_delete(bufnr, { force = true })
+                end)
+              end,
+            },
+          },
+        },
+      },
+    },
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
   },
 }
 

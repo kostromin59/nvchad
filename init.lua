@@ -20,3 +20,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     }
   end,
 })
+
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+vim.opt.wrap = false

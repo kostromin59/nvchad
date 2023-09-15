@@ -70,7 +70,6 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    "deno",
     "prettierd",
     "eslint-lsp",
     "eslint_d",
@@ -81,6 +80,9 @@ M.mason = {
     "codelldb",
     "taplo",
     "rust-analyzer",
+  },
+  autotag = {
+    enable = true,
   },
 }
 
@@ -95,6 +97,33 @@ M.nvimtree = {
     icons = {
       show = {
         git = true,
+      },
+    },
+  },
+}
+
+M.telescope = {
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+          ["<C-c>"] = function(prompt_bufnr)
+            local current_picker = action_state.get_current_picker(prompt_bufnr)
+            current_picker:delete_selection(function(selection)
+              local bufnr = selection.bufnr
+              -- get associated window(s)
+              local winids = vim.fn.win_findbuf(bufnr)
+              -- fill winids with new empty buffers
+              for _, winid in ipairs(winids) do
+                -- check documentation of nvim_create_buf carefully about whether you want a scratch buffer or something else
+                local new_buf = vim.api.nvim_create_buf(false, true)
+                vim.api.nvim_win_set_buf(winid, new_buf)
+              end
+              -- remove buffer at last
+              vim.api.nvim_buf_delete(bufnr, { force = true })
+            end)
+          end,
+        },
       },
     },
   },
