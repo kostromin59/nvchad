@@ -216,7 +216,56 @@ local plugins = {
 
   {
     "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
+    opts = {
+      show_current_context = true,
+      show_current_context_start = false,
+    },
+  },
+
+  {
+    "axelvc/template-string.nvim",
+    ft = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+    opts = {
+      filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+      jsx_brackets = true,
+      remove_template_string = true,
+      restore_quotes = {
+        normal = [["]],
+        jsx = [["]],
+      },
+    },
+  },
+
+  { "phaazon/hop.nvim", opts = {} },
+
+  {
+    ft = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "xml",
+      "php",
+      "markdown",
+      "astro",
+      "glimmer",
+      "handlebars",
+      "hbs",
+    },
+    "windwp/nvim-ts-autotag",
+    opts = {
+      autotag = {
+        enable = true,
+        enable_rename = true,
+        enable_close_on_slash = false,
+      },
+    },
   },
 }
 
