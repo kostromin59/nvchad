@@ -108,6 +108,7 @@ M.telescope = {
       mappings = {
         i = {
           ["<C-c>"] = function(prompt_bufnr)
+            local action_state = require "telescope.actions.state"
             local current_picker = action_state.get_current_picker(prompt_bufnr)
             current_picker:delete_selection(function(selection)
               local bufnr = selection.bufnr

@@ -77,40 +77,7 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     ft = { "rust" },
     config = function()
-      local codelldb = require("mason-registry").get_package "codelldb"
-      local extension_path = codelldb:get_install_path() .. "/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-      require("rust-tools").setup {
-        dap = {
-          adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-        tools = {
-          autoSetHints = true,
-          inlay_hints = {
-            show_parameter_hints = true,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-          },
-        },
-        server = {
-          on_attach = require("plugins.configs.lspconfig").on_attach,
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = {
-                autoReload = true,
-              },
-              checkOnSave = true,
-            },
-          },
-          standalone = true,
-          checkOnSave = {
-            allFeatures = true,
-            command = "clippy",
-          },
-        },
-      }
-      require("rust-tools").inlay_hints.enable()
+      require("custom.configs.rust-tools").setup()
     end,
   },
 
@@ -175,38 +142,12 @@ local plugins = {
 
   {
     "nvim-telescope/telescope.nvim",
-    opts = {
-      pickers = {
-        buffers = {
-          mappings = {
-            i = {
-              ["<C-c>"] = function(prompt_bufnr)
-                local action_state = require "telescope.actions.state"
-                local current_picker = action_state.get_current_picker(prompt_bufnr)
-                current_picker:delete_selection(function(selection)
-                  local bufnr = selection.bufnr
-                  -- get associated window(s)
-                  local winids = vim.fn.win_findbuf(bufnr)
-                  -- fill winids with new empty buffers
-                  for _, winid in ipairs(winids) do
-                    -- check documentation of nvim_create_buf carefully about whether you want a scratch buffer or something else
-                    local new_buf = vim.api.nvim_create_buf(false, true)
-                    vim.api.nvim_win_set_buf(winid, new_buf)
-                  end
-                  -- remove buffer at last
-                  vim.api.nvim_buf_delete(bufnr, { force = true })
-                end)
-              end,
-            },
-          },
-        },
-      },
-    },
+    opts = overrides.telescope,
   },
 
   {
     "numToStr/Comment.nvim",
-    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring", ft = { "typescriptreact", "javascriptreact" } },
     config = function()
       require("Comment").setup {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
@@ -239,33 +180,17 @@ local plugins = {
   { "phaazon/hop.nvim", opts = {} },
 
   {
-    ft = {
-      "html",
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "svelte",
-      "vue",
-      "tsx",
-      "jsx",
-      "rescript",
-      "xml",
-      "php",
-      "markdown",
-      "astro",
-      "glimmer",
-      "handlebars",
-      "hbs",
-    },
     "windwp/nvim-ts-autotag",
-    opts = {
-      autotag = {
-        enable = true,
-        enable_rename = true,
-        enable_close_on_slash = false,
-      },
-    },
+    ft = require("custom.configs.nvim-ts-autotag").ft,
+    opts = require("custom.configs.nvim-ts-autotag").opts,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("custom.configs.todo-comments").setup()
+    end,
   },
 }
 
