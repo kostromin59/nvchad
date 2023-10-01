@@ -7,7 +7,6 @@ local servers = {
   "lua_ls",
   "cssls",
   "html",
-  "tsserver",
   "pyright",
   "bashls",
   "jsonls",
@@ -20,6 +19,18 @@ local servers = {
   "prismals",
   "gopls",
 }
+
+vim.diagnostic.config {
+  update_in_insert = true,
+}
+
+local organize_imports = function()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+  }
+  vim.lsp.buf.execute_command(params)
+end
 
 local on_attach = function(client, bufnr)
   require("plugins.configs.lspconfig").on_attach(client, bufnr)
@@ -38,8 +49,20 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-vim.diagnostic.config {
-  update_in_insert = true,
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = {
+    ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = false,
+    }),
+  },
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports",
+    },
+  },
 }
 
 lspconfig.lua_ls.setup {

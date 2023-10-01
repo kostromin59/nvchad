@@ -119,6 +119,10 @@ M.general = {
       end,
       "Hop before cursor",
     },
+    ["<leader>lo"] = {
+      ":OrganizeImports<CR>",
+      "Organize imports (Typescript)",
+    },
   },
   v = {
     ["<A-j>"] = {
