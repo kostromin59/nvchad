@@ -6,9 +6,25 @@ local b = null_ls.builtins
 local sources = {
 
   -- Webdev stuff
-  b.formatting.deno_fmt,
-  b.formatting.prettierd,
-  -- b.formatting.eslint,
+  b.formatting.prettierd.with {
+    condition = function(utils)
+      return utils.root_has_file {
+        ".prettierrc",
+        ".prettierrc.json",
+        ".prettierrc.yml",
+        ".prettierrc.yaml",
+        ".prettierrc.json5",
+        ".prettierrc.js",
+        "prettier.config.js",
+        ".prettierrc.mjs",
+        ".prettierrc.cjs",
+        "prettier.config.mjs",
+        "prettier.config.cjs",
+        ".prettierrc.toml",
+      }
+    end,
+  },
+  b.formatting.eslint,
   b.formatting.eslint_d,
   b.diagnostics.eslint_d.with {
     condition = function(utils)
