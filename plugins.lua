@@ -33,20 +33,14 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
-    enabled = false,
+    -- enabled = false,
   },
 
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    "antosha417/nvim-lsp-file-operations",
     lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
     config = function()
-      require "custom.configs.neotree"
+      require("lsp-file-operations").setup()
     end,
   },
 

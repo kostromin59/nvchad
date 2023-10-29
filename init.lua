@@ -21,6 +21,11 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   end,
 })
 
+local function open_nvim_tree()
+  require("nvim-tree.api").tree.open()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
 vim.opt.list = true
 -- vim.opt.listchars:append "space:⋅"
 vim.opt.wrap = false

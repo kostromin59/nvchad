@@ -36,7 +36,7 @@ M.disabled = {
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["-"] = { ":Neotree float toggle<CR>", "open neotree", opts = { nowait = true } },
+    ["-"] = { ":NvimTreeToggle<CR>", "open nvimtree", opts = { nowait = true } },
     ["<leader>w"] = { ":w<CR>", "Save file", opts = { nowait = true } },
     ["<leader>gc"] = {
       "<cmd> Telescope git_commits <CR>",
