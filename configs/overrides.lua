@@ -98,6 +98,7 @@ local function on_attach_nvimtree(bufnr)
   vim.keymap.set("n", "<C-t>", api.tree.change_root_to_parent, opts "Up")
   vim.keymap.set("n", "-", api.tree.toggle, opts "Toggle")
   vim.keymap.set("n", "?", api.tree.toggle_help, opts "Help")
+  vim.keymap.set("n", "s", api.node.open.vertical, opts "Split vertical")
 end
 
 local HEIGHT_RATIO = 0.8
