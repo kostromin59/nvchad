@@ -35,6 +35,7 @@ M.disabled = {
 
 M.general = {
   n = {
+    ["x"] = { '"_x' },
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["-"] = { ":NvimTreeToggle<CR>", "open nvimtree", opts = { nowait = true } },
     ["<leader>w"] = { ":w<CR>", "Save file", opts = { nowait = true } },

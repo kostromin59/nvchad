@@ -186,6 +186,11 @@ local plugins = {
       require("custom.configs.todo-comments").setup()
     end,
   },
+
+  {
+    "tpope/vim-surround",
+    lazy = false,
+  },
 }
 
 return plugins
