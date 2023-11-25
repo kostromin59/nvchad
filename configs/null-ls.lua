@@ -33,7 +33,7 @@ local sources = {
   b.code_actions.eslint_d,
   b.formatting.rustywind,
 
- -- Lua
+  -- Lua
   b.formatting.stylua,
   b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
 

@@ -94,13 +94,11 @@ local plugins = {
     dependencies = {
       {
         "L3MON4D3/LuaSnip",
+        after = "nvim-cmp",
+        dependencies = { "rafamadriz/friendly-snippets" },
         config = function(_, opts)
           require("plugins.configs.others").luasnip(opts)
-
-          local luasnip = require "luasnip"
-
-          luasnip.filetype_extend("javascriptreact", { "html" })
-          require("luasnip/loaders/from_vscode").lazy_load()
+          require("luasnip.loaders.from_vscode").load {}
         end,
       },
     },

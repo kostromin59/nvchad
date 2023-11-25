@@ -9,12 +9,12 @@ M.cmp = {
       winhighlight = "NormalFloat:TelescopeNormal,FloatBorder:TelescopeBorder",
     },
   },
-  formatting = {
-    format = function(_, vim_item)
-      vim_item.menu = nil
-      return vim_item
-    end,
-  },
+  -- formatting = {
+  --   format = function(_, vim_item)
+  --     vim_item.menu = nil
+  --     return vim_item
+  --   end,
+  -- },
   completion = {
     completeopt = "menu,menuone,noselect",
   },
@@ -36,6 +36,9 @@ M.cmp = {
         return true
       end,
     },
+    { name = "luasnip" },
+    { name = "path" },
+    { name = "nvim_lua" },
   },
 }
 
