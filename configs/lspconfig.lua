@@ -13,7 +13,7 @@ local servers = {
   "yamlls",
   "taplo",
   "tailwindcss",
-  "emmet_language_server",
+  -- "emmet_language_server",
   "emmet_ls",
   "prismals",
   "gopls",
@@ -81,4 +81,11 @@ lspconfig.lua_ls.setup {
       },
     },
   },
+}
+
+local pid = vim.fn.getpid()
+lspconfig.omnisharp.setup {
+  cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(pid) },
+  on_attach = on_attach,
+  capabilities = capabilities,
 }

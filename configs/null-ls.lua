@@ -45,6 +45,8 @@ local sources = {
   b.formatting.gofumpt,
   b.formatting.goimports,
   b.formatting.golines,
+
+  b.formatting.csharpier,
 }
 
 null_ls.setup {

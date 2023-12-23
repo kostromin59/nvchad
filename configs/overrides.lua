@@ -54,6 +54,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "rust",
+    "c_sharp",
   },
   indent = {
     enable = true,
@@ -78,11 +79,15 @@ M.mason = {
     "eslint_d",
     "rustywind",
     "tailwindcss-language-server",
+    "emmet",
 
     -- Rust stuff
     "codelldb",
     "taplo",
     "rust-analyzer",
+
+    -- Csharp
+    "csharpier",
   },
   autotag = {
     enable = true,
