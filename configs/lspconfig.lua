@@ -12,7 +12,7 @@ local servers = {
   "jsonls",
   "yamlls",
   "taplo",
-  "tailwindcss",
+  -- "tailwindcss",
   -- "emmet_language_server",
   "emmet_ls",
   "prismals",
@@ -88,4 +88,25 @@ lspconfig.omnisharp.setup {
   cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(pid) },
   on_attach = on_attach,
   capabilities = capabilities,
+}
+
+lspconfig.tailwindcss.setup {
+  root_dir = lspconfig.util.root_pattern("tailwind.config.ts", "tailwind.config.js"),
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        classRegex = {
+          "tw`([^`]*)", -- tw`...`
+          "tw='([^']*)", -- <div tw="..." />
+          "tw={`([^`}]*)", -- <div tw={"..."} />
+          "tw\\.\\w+`([^`]*)", -- tw.xxx`...`
+          "tw\\(.*?\\)`([^`]*)", -- tw(component)`...`
+          "styled\\(.*?, '([^']*)'\\)",
+          { "cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" },
+        },
+      },
+    },
+  },
 }
