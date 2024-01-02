@@ -13,11 +13,20 @@ M.override = {
 
 ---@type HLTable
 M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  -- FloatBorder = { fg = "green" },
+  -- NvimTreeFolderIcon = { fg = "green" },
+  -- NvimTreeOpenedFolderIcon = { fg = "green" },
+  -- NvimTreeClosedFolderIcon = { fg = "green" },
+  --
+  -- NvimTreeFolderName = { fg = "green" },
+  -- NvimTreeOpenedFolderName = { fg = "green" },
+  -- NvimTreeClosedFolderName = { fg = "green" },
 }
 
 M.ui = {
-  hl_override = { CursorLine = { bg = "black2" } },
+  hl_override = {
+    CursorLine = { bg = "black2" },
+  },
 }
 
 return M
