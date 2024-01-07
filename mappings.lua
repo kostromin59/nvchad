@@ -193,6 +193,7 @@ M.nvterm = {
   n = {
     ["<F7>"] = {
       function()
+        vim.cmd "NvimTreeClose"
         require("nvterm.terminal").toggle "float"
       end,
       "Toggle floating term",
