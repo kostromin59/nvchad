@@ -55,12 +55,16 @@ M.treesitter = {
     "markdown_inline",
     "rust",
     "c_sharp",
+    "prisma",
   },
   indent = {
     enable = true,
     -- disable = {
     --   "python"
     -- },
+  },
+  autotag = {
+    enable = true,
   },
 }
 
@@ -79,7 +83,8 @@ M.mason = {
     "eslint_d",
     "rustywind",
     "tailwindcss-language-server",
-    "emmet",
+    "emmet-ls",
+    "prisma-language-server",
 
     -- Rust stuff
     "codelldb",
