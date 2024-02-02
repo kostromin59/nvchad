@@ -46,7 +46,11 @@ local sources = {
   b.formatting.goimports,
   b.formatting.golines,
 
+  -- Csharp
   b.formatting.csharpier,
+
+  -- CPP
+  b.formatting.clang_format,
 }
 
 null_ls.setup {

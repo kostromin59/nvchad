@@ -56,6 +56,8 @@ M.treesitter = {
     "rust",
     "c_sharp",
     "prisma",
+    "c",
+    "cpp",
   },
   indent = {
     enable = true,
@@ -93,6 +95,10 @@ M.mason = {
 
     -- Csharp
     "csharpier",
+
+    -- CPP
+    "clangd",
+    "clang-format",
   },
   autotag = {
     enable = true,

@@ -33,6 +33,20 @@ M.disabled = {
   },
 }
 
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      "Add breakpoint at line",
+    },
+    ["<leader>dr"] = {
+      "<cmd> DapContinue <CR>",
+      "Start or continue the debugger",
+    },
+  },
+}
+
 M.general = {
   n = {
     ["x"] = { '"_x' },
@@ -90,18 +104,18 @@ M.general = {
       "Split horizontal",
       opts = { nowait = true },
     },
-    ["<leader>db"] = {
-      ":DapToggleBreakpont<CR>",
-      "Toggle breakpoint",
-    },
-    ["<leader>dx"] = {
-      ":DapTerminate<CR>",
-      "Terminate DAP",
-    },
-    ["<leader>do"] = {
-      "DapStepOver<CR>",
-      "DAP step over",
-    },
+    -- ["<leader>db"] = {
+    --   ":DapToggleBreakpont<CR>",
+    --   "Toggle breakpoint",
+    -- },
+    -- ["<leader>dx"] = {
+    --   ":DapTerminate<CR>",
+    --   "Terminate DAP",
+    -- },
+    -- ["<leader>do"] = {
+    --   "DapStepOver<CR>",
+    --   "DAP step over",
+    -- },
     ["f"] = {
       function()
         require("hop").hint_char1 {

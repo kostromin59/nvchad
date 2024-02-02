@@ -17,6 +17,7 @@ local servers = {
   "emmet_ls",
   "prismals",
   "gopls",
+  "clangd",
 }
 
 vim.diagnostic.config {
@@ -98,10 +99,10 @@ lspconfig.tailwindcss.setup {
     tailwindCSS = {
       experimental = {
         classRegex = {
-          "tw`([^`]*)", -- tw`...`
-          "tw='([^']*)", -- <div tw="..." />
-          "tw={`([^`}]*)", -- <div tw={"..."} />
-          "tw\\.\\w+`([^`]*)", -- tw.xxx`...`
+          "tw`([^`]*)",          -- tw`...`
+          "tw='([^']*)",         -- <div tw="..." />
+          "tw={`([^`}]*)",       -- <div tw={"..."} />
+          "tw\\.\\w+`([^`]*)",   -- tw.xxx`...`
           "tw\\(.*?\\)`([^`]*)", -- tw(component)`...`
           "styled\\(.*?, '([^']*)'\\)",
           { "cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" },
