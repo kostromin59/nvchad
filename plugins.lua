@@ -5,15 +5,6 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      -- {
-      --   "jose-elias-alvarez/null-ls.nvim",
-      --   config = function()
-      --     require "custom.configs.null-ls"
-      --   end,
-      -- },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -22,7 +13,7 @@ local plugins = {
 
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre",
+    lazy = false,
     config = function()
       require "custom.configs.conform"
     end,
@@ -184,9 +175,7 @@ local plugins = {
       require("telescope").setup {
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
-              -- even more opts
-            },
+            require("telescope.themes").get_dropdown {},
           },
         },
       }
@@ -195,10 +184,10 @@ local plugins = {
     end,
   },
 
-  {
-    "kdheepak/lazygit.nvim",
-    cmd = "LazyGit",
-  },
+  "https://github.com/NvChad/nvcommunity",
+  { import = "nvcommunity.git.lazygit" },
+  { import = "nvcommunity.lsp.mason-lspconfig" },
+  { import = "nvcommunity.lsp.prettyhover" },
 }
 
 return plugins

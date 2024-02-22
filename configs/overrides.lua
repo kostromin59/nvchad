@@ -87,6 +87,9 @@ M.mason = {
     -- clang stuff
     "clangd",
     "clang-format",
+
+    -- shell stuff
+    "shfmt",
   },
   autotag = {
     enable = true,

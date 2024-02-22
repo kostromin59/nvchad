@@ -3,22 +3,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = {
-  "lua_ls",
-  "cssls",
-  "html",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
-  "taplo",
-  -- "tailwindcss",
-  -- "emmet_language_server",
-  "emmet_ls",
-  "prismals",
-  "gopls",
-  "clangd",
-}
+local servers = {}
 
 vim.diagnostic.config {
   update_in_insert = true,
@@ -99,10 +84,10 @@ lspconfig.tailwindcss.setup {
     tailwindCSS = {
       experimental = {
         classRegex = {
-          "tw`([^`]*)",          -- tw`...`
-          "tw='([^']*)",         -- <div tw="..." />
-          "tw={`([^`}]*)",       -- <div tw={"..."} />
-          "tw\\.\\w+`([^`]*)",   -- tw.xxx`...`
+          "tw`([^`]*)", -- tw`...`
+          "tw='([^']*)", -- <div tw="..." />
+          "tw={`([^`}]*)", -- <div tw={"..."} />
+          "tw\\.\\w+`([^`]*)", -- tw.xxx`...`
           "tw\\(.*?\\)`([^`]*)", -- tw(component)`...`
           "styled\\(.*?, '([^']*)'\\)",
           { "cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)" },

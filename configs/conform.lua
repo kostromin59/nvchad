@@ -5,22 +5,18 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { "prettierd", "eslint_d", "rustywind" },
-    typescript = { "prettierd", "eslint_d", "rustywind" },
-    javascriptreact = { "prettierd", "eslint_d", "rustywind" },
-    typescriptreact = { "prettierd", "eslint_d", "rustywind" },
+    javascript = { "eslint_d" },
+    typescript = { "eslint_d" },
+    javascriptreact = { "eslint_d", "rustywind" },
+    typescriptreact = { "eslint_d", "rustywind" },
     go = { "gofumpt", "golines", "goimports" },
     css = { "prettierd" },
-    html = { "prettierd", "rustywind" },
+    html = { "rustywind" },
 
     sh = { "shfmt" },
   },
 
-  -- adding same formatter for multiple filetypes can look too much work for some
-  -- instead of the above code you could just use a loop! the config is just a table after all!
-
   format_on_save = {
-    -- These options will be passed to conform.format()
     timeout_ms = 500,
     lsp_fallback = true,
   },
