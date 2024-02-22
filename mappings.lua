@@ -37,11 +37,11 @@ M.dap = {
   plugin = true,
   n = {
     ["<leader>db"] = {
-      "<cmd> DapToggleBreakpoint <CR>",
+      "<cmd>DapToggleBreakpoint <cr>",
       "Add breakpoint at line",
     },
     ["<leader>dr"] = {
-      "<cmd> DapContinue <CR>",
+      "<cmd>DapContinue <cr>",
       "Start or continue the debugger",
     },
   },
@@ -49,16 +49,17 @@ M.dap = {
 
 M.general = {
   n = {
+    ["q"] = { "<cmd>q<cr>" },
     ["x"] = { '"_x' },
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["-"] = { ":NvimTreeToggle<CR>", "open nvimtree", opts = { nowait = true } },
-    ["<leader>w"] = { ":w<CR>", "Save file", opts = { nowait = true } },
+    ["-"] = { "<cmd>NvimTreeToggle<cr>", "open nvimtree", opts = { nowait = true } },
+    ["<leader>w"] = { "<cmd>w<cr>", "Save file", opts = { nowait = true } },
     ["<leader>gc"] = {
-      "<cmd> Telescope git_commits <CR>",
+      "<cmd> Telescope git_commits <cr>",
       "Git commits",
     },
+    ["<leader>gg"] = { "<cmd>LazyGit<cr>", "LazyGit" },
     ["<leader>q"] = {
-      ":q<CR>",
+      "<cmd>q<cr>",
       "Quit",
       opts = { nowait = true },
     },
@@ -70,12 +71,12 @@ M.general = {
       opts = { nowait = true },
     },
     ["<leader><space>"] = {
-      "<cmd>Telescope buffers<CR>",
+      "<cmd>Telescope buffers<cr>",
       "Find buffers",
       opts = { nowait = true },
     },
     ["<leader>h"] = {
-      "<cmd>nohlsearch<CR>",
+      "<cmd>nohlsearch<cr>",
       "No search highlight",
       opts = { nowait = true },
     },
@@ -85,37 +86,25 @@ M.general = {
       opts = { nowait = true },
     },
     ["<A-j>"] = {
-      ":m .+1<CR>==",
+      "<cmd>m .+1<cr>==",
       "Move line down",
       opts = { nowait = true },
     },
     ["<A-k>"] = {
-      ":m .-2<CR>==",
+      "<cmd>m .-2<cr>==",
       "Move line up",
       opts = { nowait = true },
     },
     ["|"] = {
-      ":vsplit<CR>",
+      "<cmd>vsplit<cr>",
       "Split vertical",
       opts = { nowait = true },
     },
     ["\\"] = {
-      ":split<CR>",
+      "<cmd>split<cr>",
       "Split horizontal",
       opts = { nowait = true },
     },
-    -- ["<leader>db"] = {
-    --   ":DapToggleBreakpont<CR>",
-    --   "Toggle breakpoint",
-    -- },
-    -- ["<leader>dx"] = {
-    --   ":DapTerminate<CR>",
-    --   "Terminate DAP",
-    -- },
-    -- ["<leader>do"] = {
-    --   "DapStepOver<CR>",
-    --   "DAP step over",
-    -- },
     ["f"] = {
       function()
         require("hop").hint_char1 {
@@ -135,18 +124,18 @@ M.general = {
       "Hop before cursor",
     },
     ["<leader>lo"] = {
-      ":OrganizeImports<CR>",
+      "<cmd>OrganizeImports<cr>",
       "Organize imports (Typescript)",
     },
   },
   v = {
     ["<A-j>"] = {
-      ":m '>+1<CR>gv-gv",
+      "<cmd>m '>+1<cr>gv-gv",
       "Move lines down",
       opts = { nowait = true },
     },
     ["<A-k>"] = {
-      ":m '<-2<CR>gv-gv",
+      "<cmd>m '<-2<cr>gv-gv",
       "Move lines up",
       opts = { nowait = true },
     },
@@ -230,7 +219,7 @@ M.nvterm = {
       end,
       "New float term",
     },
-    ["<leader>tt"] = { "<cmd> Telescope terms <CR>", "Pick hidden term" },
+    ["<leader>tt"] = { "<cmd> Telescope terms <cr>", "Pick hidden term" },
   },
   t = {
     ["<F7>"] = {

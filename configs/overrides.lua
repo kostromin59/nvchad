@@ -9,12 +9,6 @@ M.cmp = {
       winhighlight = "NormalFloat:TelescopeNormal,FloatBorder:TelescopeBorder",
     },
   },
-  -- formatting = {
-  --   format = function(_, vim_item)
-  --     vim_item.menu = nil
-  --     return vim_item
-  --   end,
-  -- },
   completion = {
     completeopt = "menu,menuone,noselect",
   },
@@ -53,11 +47,9 @@ M.treesitter = {
     "tsx",
     "markdown",
     "markdown_inline",
-    "rust",
-    "c_sharp",
-    "prisma",
     "c",
     "cpp",
+    "go",
   },
   indent = {
     enable = true,
@@ -81,22 +73,18 @@ M.mason = {
     "html-lsp",
     "typescript-language-server",
     "prettierd",
-    "eslint-lsp",
     "eslint_d",
     "rustywind",
     "tailwindcss-language-server",
     "emmet-ls",
-    "prisma-language-server",
 
-    -- Rust stuff
-    "codelldb",
-    "taplo",
-    "rust-analyzer",
+    -- go stuff
+    "gopls",
+    "gofumpt",
+    "goimports",
+    "golines",
 
-    -- Csharp
-    "csharpier",
-
-    -- CPP
+    -- clang stuff
     "clangd",
     "clang-format",
   },

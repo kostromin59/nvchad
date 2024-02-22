@@ -5,11 +5,13 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { "prettierd", "eslint_d" },
-    typescript = { "prettierd", "eslint_d" },
+    javascript = { "prettierd", "eslint_d", "rustywind" },
+    typescript = { "prettierd", "eslint_d", "rustywind" },
+    javascriptreact = { "prettierd", "eslint_d", "rustywind" },
+    typescriptreact = { "prettierd", "eslint_d", "rustywind" },
     go = { "gofumpt", "golines", "goimports" },
     css = { "prettierd" },
-    html = { "prettierd" },
+    html = { "prettierd", "rustywind" },
 
     sh = { "shfmt" },
   },

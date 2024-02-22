@@ -68,35 +68,6 @@ local plugins = {
   },
 
   {
-    "rust-lang/rust.vim",
-    ft = { "rust" },
-    init = function()
-      vim.g.rustfmt_autosave = 1
-    end,
-  },
-
-  {
-    "simrat39/rust-tools.nvim",
-    ft = { "rust" },
-    config = function()
-      require("custom.configs.rust-tools").setup()
-    end,
-  },
-
-  {
-    "Saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    config = function()
-      require("crates").setup {
-        null_ls = {
-          enabled = true,
-          name = "crates.nvim",
-        },
-      }
-    end,
-  },
-
-  {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
     dependencies = {
@@ -147,42 +118,6 @@ local plugins = {
       require("core.utils").load_mappings "dap"
     end,
   },
-
-  -- {
-  --   "mfussenegger/nvim-dap",
-  -- },
-  --
-  -- {
-  --   "jay-babu/mason-nvim-dap.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     handlers = {},
-  --   },
-  -- },
-
-  -- {
-  --   "rcarriga/nvim-dap-ui",
-  --   config = function()
-  --     local dap, dapui = require "dap", require "dapui"
-  --     dap.listeners.after.event_initialized["dapui_config"] = function()
-  --       dapui.open()
-  --     end
-  --     dap.listeners.before.event_terminated["dapui_config"] = function()
-  --       dapui.close()
-  --     end
-  --     dap.listeners.before.event_exited["dapui_config"] = function()
-  --       dapui.close()
-  --     end
-  --   end,
-  -- },
-  --
-  -- {
-  --   "leoluz/nvim-dap-go",
-  --   ft = "go",
-  --   config = function(_, opts)
-  --     require("dap-go").setup(opts)
-  --   end,
-  -- },
 
   {
     "nvim-telescope/telescope.nvim",
@@ -258,6 +193,11 @@ local plugins = {
 
       require("telescope").load_extension "ui-select"
     end,
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
   },
 }
 
