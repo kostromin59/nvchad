@@ -25,3 +25,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	},
 	update_in_insert = true,
 })
+
+vim.opt.pumheight = 10
+vim.opt.wrap = false
+vim.wo.relativenumber = true
+vim.opt.clipboard = "unnamedplus"
+
+local function open_nvim_tree()
+	require("nvim-tree.api").tree.open()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
