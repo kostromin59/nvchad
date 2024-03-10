@@ -2,7 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "a7a4b4682c4b3e2ba82b82a4e6e5f5a0e79dec32" },
   "NvChad": { "branch": "v2.5", "commit": "96ba9ceb0c31c5e595a2b184586805fadaeec864" },
-  "base46": { "branch": "v2.5", "commit": "d025dcb50d21582c2f332bb6764acf672167b4d2" },
+  "base46": { "branch": "v2.5", "commit": "db6342e4b6e91fd607f3e5d471f1a034405f73db" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
@@ -35,6 +35,6 @@
   "telescope.nvim": { "branch": "master", "commit": "7472420f8734c710bd7009081cef9b97f08a3821" },
   "template-string.nvim": { "branch": "main", "commit": "419bfb2e4d5f0e6ddd0d4435f85b69da0d88d524" },
   "todo-comments.nvim": { "branch": "main", "commit": "833d8dd8b07eeda37a09e99460f72a02616935cb" },
-  "ui": { "branch": "v2.5", "commit": "84ec2bb71e0bc47cba207bc58d333532b6e05945" },
+  "ui": { "branch": "v2.5", "commit": "95e6495d3cfe58de41025e8b0f3f3077719ec591" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

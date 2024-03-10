@@ -5,7 +5,6 @@ return {
 	},
 
 	{
-		event = { "VeryLazy", "BufRead" },
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("configs.mason-lspconfig")

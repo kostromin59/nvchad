@@ -29,7 +29,7 @@ M.mason = {
 
 M.mason_lspconfig = {
 	"html",
-	"css",
+	"cssls",
 	"tsserver",
 	"cssmodules_ls",
 	"dockerls",
