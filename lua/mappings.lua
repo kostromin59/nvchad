@@ -12,6 +12,9 @@ end, { desc = "File Format with conform" })
 
 map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
+map("n", "\\", "<cmd>split<cr>", { desc = "Horizontal split" })
+map("n", "|", "<cmd>vsplit<cr>", { desc = "Vertical split" })
+
 map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 map("i", "jj", "<ESC>", { desc = "Escape insert mode" })
 
