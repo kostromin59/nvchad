@@ -26,4 +26,10 @@ return {
 		"nvim-telescope/telescope-fzf-native.nvim",
 		lazy = false,
 	},
+
+	{
+		"folke/trouble.nvim",
+		cmd = { "Trouble", "TroubleToggle", "TodoTrouble" },
+		opts = require("configs.trouble"),
+	},
 }

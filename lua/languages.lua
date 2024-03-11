@@ -35,7 +35,6 @@ M.mason_lspconfig = {
 	"dockerls",
 	"docker_compose_language_service",
 	"emmet_language_server",
-	"golangci_lint_ls",
 	"gopls",
 	"jsonls",
 	"marksman",

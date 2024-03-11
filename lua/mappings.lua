@@ -12,6 +12,8 @@ end, { desc = "File Format with conform" })
 
 map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
+map("n", "<C-t>", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Trouble" })
+
 map("n", "\\", "<cmd>split<cr>", { desc = "Horizontal split" })
 map("n", "|", "<cmd>vsplit<cr>", { desc = "Vertical split" })
 
