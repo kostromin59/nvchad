@@ -12,8 +12,8 @@ end, { desc = "File Format with conform" })
 
 map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
-map("n", "<C-a>", "ggvG$", { desc = "Select all" })
-map("i", "<C-a>", "<Esc>ggvG$", { desc = "Select all" })
+map("n", "<C-a>", "gg0vG$", { desc = "Select all" })
+map("i", "<C-a>", "<Esc>gg0vG$", { desc = "Select all" })
 
 map("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Lsp floating diagnostics" })
 map("n", "<C-t>", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Trouble" })
