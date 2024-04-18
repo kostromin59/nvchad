@@ -4,7 +4,7 @@ M.lsp_fallback = true
 
 M.formatters_by_ft = {
 	lua = { "stylua" },
-	javascript = { "eslint_d" },
+	javascript = { "prettierd" },
 	typescript = { "eslint_d" },
 	javascriptreact = { "eslint_d", "rustywind" },
 	typescriptreact = { "eslint_d", "rustywind" },

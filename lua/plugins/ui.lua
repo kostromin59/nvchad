@@ -32,4 +32,11 @@ return {
 		cmd = { "Trouble", "TroubleToggle", "TodoTrouble" },
 		opts = require("configs.trouble"),
 	},
+
+	{
+		"mistricky/codesnap.nvim",
+		build = "make",
+		cmd = { "CodeSnap" },
+		opts = {},
+	},
 }
