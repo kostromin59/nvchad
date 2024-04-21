@@ -48,4 +48,22 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
+	-- TailwindCSS
+	["tailwindcss"] = function()
+		lspconfig.tailwindcss.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			on_init = on_init,
+			hovers = true,
+			suggestions = true,
+			root_dir = function(fname)
+				local root_pattern = require("lspconfig").util.root_pattern(
+					"tailwind.config.cjs",
+					"tailwind.config.js",
+					"postcss.config.js"
+				)
+				return root_pattern(fname)
+			end,
+		})
+	end,
 })
