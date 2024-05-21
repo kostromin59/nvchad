@@ -10,7 +10,7 @@ M.formatters_by_ft = {
 	typescriptreact = { "eslint_d", "eslint", "rustywind" },
 	go = { "gofumpt", "golines", "goimports" },
 	css = { "prettierd" },
-	html = { "rustywind" },
+	html = { "prettierd", "rustywind" },
 	json = { "prettierd" },
 }
 

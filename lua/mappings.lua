@@ -57,8 +57,6 @@ nomap("n", "<leader>b")
 nomap("n", "<leader>e")
 nomap("n", "<leader>n")
 
-nomap("n", "<leader>lf")
-
 nomap("n", "<leader>th")
 
 nomap("n", "<C-n>")
