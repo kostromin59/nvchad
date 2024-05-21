@@ -33,6 +33,16 @@ map("v", "<A-k>", ":m'<-2<cr>gv=`>my`<mzgv`yo`z")
 map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 map("i", "jj", "<ESC>", { desc = "Escape insert mode" })
 
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "<", "<<", { silent = true })
+vim.keymap.set("n", ">", ">>", { silent = true })
+vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("v", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("v", "p", '"_dP', { silent = true })
+vim.keymap.set("v", "<", "<gv", { silent = true })
+vim.keymap.set("v", ">", ">gv", { silent = true })
+
 map({ "n", "t" }, "<F7>", function()
 	require("nvchad.term").toggle({
 		pos = "float",
